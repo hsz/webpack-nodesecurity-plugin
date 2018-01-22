@@ -1,0 +1,6 @@
+{
+  "name": "webpack-nodesecurity-plugin-test",
+  "dependencies": {
+    "mqtt"
+  }
+}
