@@ -1,6 +1,6 @@
 const nspCheck = require('nsp/commands/check');
 
-function NodeSecurityPlugin(options) {
+function NodeSecurityPlugin (options) {
   this.options = options || {};
   this.options.reporter = this.options.reporter || 'summary';
 }
@@ -13,11 +13,12 @@ NodeSecurityPlugin.prototype.apply = function (compiler) {
     process.exit = originalExit;
     callback();
   };
-  process.exit = function (code) {
-    errorCode = errorCode || code;
-  };
 
   compiler.plugin('emit', function (compilation, callback) {
+    process.exit = function (code) {
+      errorCode = errorCode || code;
+    };
+
     nspCheck.handler(options)
       .then(function () {
         switch (errorCode) {
