@@ -1,6 +1,6 @@
 {
   "name": "webpack-nodesecurity-plugin",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Run Node Security check on your package.json file using Webpack",
   "main": "index.js",
   "scripts": {
